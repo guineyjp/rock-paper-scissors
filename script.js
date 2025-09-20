@@ -1,5 +1,9 @@
 console.log("Hello Worlds");
 
+/*creating a function that generates a random number, then using if else if statement to return rock, paper or scissors
+depending on the result of that function
+*/
+
 function getComputerChoice() {
     const randomComputerResult = Math.random();
 
@@ -15,14 +19,4 @@ function getComputerChoice() {
 
 console.log(getComputerChoice());
 
-function randomResultSimple() {
-    const randomResult2 = Math.random();
-
-if (randomResult2 <=0.33) {
-    return "rock";
-} else {
-    return "scissors";
-}
-}
-
-console.log(randomResultSimple());
+prompt("Choose Your Weapon", "Enter Rock, Paper or Scissors");
