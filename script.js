@@ -22,3 +22,5 @@ console.log(getComputerChoice());
 //Now creating the human side of the game
 
 let getHumanChoice = prompt("Choose Your Weapon", "Enter Rock, Paper or Scissors");
+
+console.log(getHumanChoice);
