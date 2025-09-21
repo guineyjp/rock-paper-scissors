@@ -24,3 +24,8 @@ console.log(getComputerChoice());
 let getHumanChoice = prompt("Choose Your Weapon", "Enter Rock, Paper or Scissors");
 
 console.log(getHumanChoice);
+
+//now need to write variables to keep track of player scores
+
+let humanScore = 0 ;
+let computerScore = 0;
