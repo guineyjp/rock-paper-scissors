@@ -65,6 +65,13 @@ function playGame(humanChoice, computerChoice) {
 }
     let result = playRound(humanChoice, computerChoice);
     console.log(result);
+
+    //updating scores based on result
+    if (result.includes("You've won")) {
+        humanScore++;
+} else if (result.includes("The Computer has won")) {
+        computerScore++;
+}
 }
 
 
