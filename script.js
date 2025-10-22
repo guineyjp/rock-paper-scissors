@@ -26,7 +26,6 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-
 //now need to write variables to keep track of player scores
 
 let humanScore = 0 ;
@@ -36,7 +35,6 @@ let computerScore = 0;
 and computer choice as arguments
 */
 
-
 function playGame(humanChoice, computerChoice) {
 
     //showing choices by both players
@@ -45,7 +43,7 @@ function playGame(humanChoice, computerChoice) {
 
     function playRound(humanChoice, computerChoice) {
     //making human input and computer input lower case in case of variation in input
-   let humanChoiceLower = humanChoice.toLowerCase;
+   let humanChoiceLower = humanChoice.toLowerCase();
    let computerChoiceLower = computerChoice.toLowerCase();
 
    console.log(humanChoiceLower);
@@ -69,6 +67,8 @@ function playGame(humanChoice, computerChoice) {
    }
 
 }
+    let result = playRound(humanChoice, computerChoice);
+    console.log(result);
 }
 
 
