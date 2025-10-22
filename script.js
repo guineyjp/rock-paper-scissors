@@ -1,4 +1,4 @@
-console.log("Hello Worlds");
+console.log("Hello World");
 
 /*creating a function that generates a random number, then using if else if statement to return rock, paper or scissors
 depending on the result of that function
