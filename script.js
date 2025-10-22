@@ -27,8 +27,6 @@ function getHumanChoice() {
 }
 
 
-
-
 //now need to write variables to keep track of player scores
 
 let humanScore = 0 ;
@@ -65,9 +63,10 @@ function playRound(humanChoice, computerChoice) {
 
    console.log(humanChoiceLower);
    console.log(computerChoiceLower);
+}
 
+function playGame() {
 
 }
 
-const outcome = playRound (getHumanChoice, computerPick);
-console.log(outcome);
+
