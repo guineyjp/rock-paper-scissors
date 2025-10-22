@@ -36,7 +36,14 @@ let computerScore = 0;
 and computer choice as arguments
 */
 
-function playRound(humanChoice, computerChoice) {
+
+function playGame() {
+
+    //showing choices by both players
+    console.log("Human Choice is:", humanChoice);
+    console.log("Computer Choice is:", computerChoice);
+    
+    function playRound(humanChoice, computerChoice) {
     //making human input and computer input lower case in case of variation in input
    let humanChoiceLower = humanChoice.toLowerCase;
    let computerChoiceLower = computerChoice.toLowerCase();
@@ -63,10 +70,6 @@ function playRound(humanChoice, computerChoice) {
 
    console.log(humanChoiceLower);
    console.log(computerChoiceLower);
-}
-
-function playGame() {
 
 }
-
-
+}
