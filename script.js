@@ -17,15 +17,57 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+const computerPick = getComputerChoice();
 
 //Now creating the human side of the game
 
-let getHumanChoice = prompt("Choose Your Weapon", "Enter Rock, Paper or Scissors");
+function getHumanChoice() {
+    let humanChoice = prompt("Choose Your Weapon", "Rock, Paper or Scissors");
+    return humanChoice;
+}
 
-console.log(getHumanChoice);
+
+
 
 //now need to write variables to keep track of player scores
 
 let humanScore = 0 ;
 let computerScore = 0;
+
+/*creating function playRound to play first round, need to create arguments that take human choices
+and computer choice as arguments
+*/
+
+function playRound(humanChoice, computerChoice) {
+    //making human input and computer input lower case in case of variation in input
+   let humanChoiceLower = humanChoice.toLowerCase;
+   let computerChoiceLower = computerChoice.toLowerCase();
+
+   console.log(humanChoiceLower);
+   console.log(computerChoiceLower);
+
+
+   //comparing results of human vs computer to determine winner
+
+   if (humanChoiceLower === computerChoiceLower) {
+        return "It's a Draw! Let's play again"
+   } else if(
+    (humanChoiceLower === "rock" && computerChoiceLower === "scissors") ||
+    (humanChoiceLower === "scissors" && computerChoiceLower === "paper") ||
+    (humanChoiceLower === "paper" && computerChoiceLower === "rock")
+   ) {
+    return "You've won! Play again?"
+   }
+
+   else {
+    return "The Computer has won! Hard Luck, maybe try again!"
+   }
+
+   console.log(humanChoiceLower);
+   console.log(computerChoiceLower);
+
+
+}
+
+const outcome = playRound (getHumanChoice, computerPick);
+console.log(outcome);
