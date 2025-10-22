@@ -72,6 +72,8 @@ function playGame(humanChoice, computerChoice) {
 } else if (result.includes("The Computer has won")) {
         computerScore++;
 }
+
+console.log("Current Scores - Human:", humanScore, "Computer:", computerScore);
 }
 
 
