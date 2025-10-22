@@ -46,10 +46,6 @@ function playGame(humanChoice, computerChoice) {
    let humanChoiceLower = humanChoice.toLowerCase();
    let computerChoiceLower = computerChoice.toLowerCase();
 
-   console.log(humanChoiceLower);
-   console.log(computerChoiceLower);
-
-
    //comparing results of human vs computer to determine winner
 
    if (humanChoiceLower === computerChoiceLower) {
@@ -73,4 +69,8 @@ function playGame(humanChoice, computerChoice) {
 
 
 //calling playGame function to start the game
+playGame(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
 playGame(getHumanChoice(), getComputerChoice());
