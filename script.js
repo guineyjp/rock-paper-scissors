@@ -35,12 +35,6 @@ let computerScore = 0;
 and computer choice as arguments
 */
 
-function playGame(humanChoice, computerChoice) {
-
-    //showing choices by both players
-    console.log("Human Choice is:", humanChoice);
-    console.log("Computer Choice is:", computerChoice);
-
     function playRound(humanChoice, computerChoice) {
     //making human input and computer input lower case in case of variation in input
    let humanChoiceLower = humanChoice.toLowerCase();
@@ -63,6 +57,14 @@ function playGame(humanChoice, computerChoice) {
    }
 
 }
+
+function playGame(humanChoice, computerChoice) {
+
+    //showing choices by both players
+    console.log("Human Choice is:", humanChoice);
+    console.log("Computer Choice is:", computerChoice);
+
+
     let result = playRound(humanChoice, computerChoice);
     console.log(result);
 
@@ -76,10 +78,100 @@ function playGame(humanChoice, computerChoice) {
 console.log("Current Scores - Human:", humanScore, "Computer:", computerScore);
 }
 
+const rockButton = document.getElementById("rock");
+const paperButton = document.getElementById("paper");
+const scissorsButton = document.getElementById("scissors");
 
+rockButton.addEventListener("click", () => { 
+    const result = playRound("rock", getComputerChoice());
+    document.getElementById("result").textContent = result;
+      if (result.includes("You've won")) {
+        humanScore++;   
+    } else if (result.includes("The Computer has won")) {
+        computerScore++;
+    }
+    document.getElementById("score").textContent = "Human: " + humanScore + "Computer:" + computerScore;
+
+    //set winner when either human or computer gets to 5. Then disable the game
+
+    if (humanScore === 5) {
+        document.getElementById ("result").textContent = "Congrats, you've won the entire game!"
+        scissorsButton.disabled = true;
+        paperButton.disabled = true;
+        rockButton.disabled = true;
+    } else if (computerScore === 5) {
+        document.getElementById ("result").textContent = "Sorry, the computer has won the entire game!"
+        scissorsButton.disabled = true;
+        paperButton.disabled = true;
+        rockButton.disabled = true;
+    }
+});
+
+paperButton.addEventListener("click", () => {
+    const result = playRound ("paper", getComputerChoice());
+    document.getElementById("result").textContent = result;
+    console.log(result);
+       if(result.includes("You've won")) {
+        humanScore++;
+       } else if (result.includes("The Computer has won")) {
+          computerScore++;
+       }
+         document.getElementById("score").textContent = "Human: " + humanScore + "Computer:" + computerScore;
+
+         
+    //set winner when either human or computer gets to 5. Then disable the game
+       if (humanScore === 5) {
+            document.getElementById ("result").textContent = "Congrats, you've won the entire game"
+            scissorsButton.disabled = true;
+        paperButton.disabled = true;
+        rockButton.disabled = true;
+       } else if (computerScore === 5) {
+        document.getElementById ("result").textContent = "Sorry the computer has won the entire game!"
+        scissorsButton.disabled = true;
+        paperButton.disabled = true;
+        rockButton.disabled = true;
+       }
+
+})
+
+scissorsButton.addEventListener("click", () => {
+    const result = playRound ("scissors", getComputerChoice());
+    document.getElementById("result").textContent = result;
+    console.log(result);
+    if(result.includes("You've won")) {
+        humanScore++;
+        
+    } else if (result.includes("The Computer has won")) {
+        computerScore++;
+    }
+         document.getElementById("score").textContent = "Human: " + humanScore + "Computer: " + computerScore;
+
+
+
+    
+    //set winner when either human or computer gets to 5. Then disable the game     
+          if (humanScore === 5) {
+            document.getElementById ("result").textContent = "Congrats, you've won the entire game"
+            scissorsButton.disabled = true;
+        paperButton.disabled = true;
+        rockButton.disabled = true;
+       } else if (computerScore === 5) {
+        document.getElementById ("result").textContent = "Sorry the computer has won the entire game!"
+        scissorsButton.disabled = true;
+        paperButton.disabled = true;
+        rockButton.disabled = true;
+       }
+})
+
+
+
+
+
+/*
 //calling playGame function to start the game
 playGame(getHumanChoice(), getComputerChoice());
 playGame(getHumanChoice(), getComputerChoice());
 playGame(getHumanChoice(), getComputerChoice());
 playGame(getHumanChoice(), getComputerChoice());
 playGame(getHumanChoice(), getComputerChoice());
+*/
